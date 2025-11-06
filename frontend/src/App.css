@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+input, button, select {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+nav {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin-right: 10px;
+}
