@@ -1,6 +1,6 @@
 # SlotSwapper
 Peer-to-peer time-slot swapping application with React frontend and Node.js/MongoDB backend.
-# SlotSwapper
+
 
 ## Overview
 SlotSwapper is a peer-to-peer time-slot swapping application. Users can mark busy slots as swappable, view other users' swappable slots, and request swaps.
@@ -34,6 +34,19 @@ SlotSwapper is a peer-to-peer time-slot swapping application. Users can mark bus
 - `GET /api/swaps/swappable-slots` – Get swappable slots
 - `POST /api/swaps/swap-request` – Send swap request
 - `POST /api/swaps/swap-response/:id` – Accept/Reject swap
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST   | /api/users/signup | Sign up a new user |
+| POST   | /api/users/login | Login and get JWT token |
+| GET    | /api/events | Get all events for logged-in user |
+| POST   | /api/events | Create a new event |
+| PATCH  | /api/events/:id | Update event status (BUSY, SWAPPABLE, SWAP_PENDING) |
+| GET    | /api/swaps/swappable-slots | Get all swappable slots from other users |
+| POST   | /api/swaps/swap-request | Request a swap (send mySlotId and theirSlotId) |
+| POST   | /api/swaps/swap-response/:id | Accept or reject a swap request (send { accept: true/false }) |
 
 # SlotSwapper
 ## Setup Instructions (Local)
