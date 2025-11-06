@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "slotswapper-collection-001",
+    "name": "SlotSwapper API",
+    "description": "Postman collection for SlotSwapper backend API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:5000/api/users/signup", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","users","signup"] }
+      },
+      "response": []
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:5000/api/users/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","users","login"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Get My Events",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer <JWT_TOKEN>", "type": "text" }
+        ],
+        "url": { "raw": "http://localhost:5000/api/events", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","events"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer <JWT_TOKEN>", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Team Meeting\",\n  \"startTime\": \"2025-11-10T10:00:00Z\",\n  \"endTime\": \"2025-11-10T11:00:00Z\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:5000/api/events", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","events"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Event Status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Authorization", "value": "Bearer <JWT_TOKEN>", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"SWAPPABLE\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:5000/api/events/:id", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","events",":id"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Swappable Slots",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer <JWT_TOKEN>", "type": "text" }
+        ],
+        "url": { "raw": "http://localhost:5000/api/swaps/swappable-slots", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","swaps","swappable-slots"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Request Swap",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer <JWT_TOKEN>", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mySlotId\": \"1\",\n  \"theirSlotId\": \"2\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:5000/api/swaps/swap-request", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","swaps","swap-request"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Respond to Swap",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer <JWT_TOKEN>", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accept\": true\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:5000/api/swaps/swap-response/:id", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api","swaps","swap-response",":id"] }
+      },
+      "response": []
+    }
+  ]
+}
